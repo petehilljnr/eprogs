@@ -1,0 +1,179 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <style>
+    body {
+        padding-top: 50px;
+        padding-bottom: 20px;
+    }
+
+    .number_pos {
+        font-size: 35px;
+        font-weight: bolder;
+        height: 50px;
+    }
+
+    .row {
+        padding-right: 2px;
+        padding-left: 2px;
+    }
+
+    .name_pos {
+        width: 100%;
+        font-size: 18px;
+        height: 50px;
+        vertical-align: middle;
+        text-align: left;
+        border: white;
+        overflow-y: hidden;
+        display: table-cell;
+    }
+
+    .photo_pos {
+        height: 40px;
+        position: relative;
+    }
+
+    .panel-footer .accordion-toggle:after {
+        /* symbol for "opening" panels */
+        font-family: 'Glyphicons Halflings';
+        /* essential for enabling glyphicon */
+        content: "\e114";
+        /* adjust as needed, taken from bootstrap.css */
+        float: right;
+        /* adjust as needed */
+        color: grey;
+        /* adjust as needed */
+    }
+
+    .panel-footer .accordion-toggle.collapsed:after {
+        /* symbol for "collapsed" panels */
+        content: "\e080";
+        /* adjust as needed, taken from bootstrap.css */
+    }
+    </style>
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header" style="vertical-align: middle; color: white; padding: 3px; padding-bottom: -3px; font-size: 16px; ">
+                <span><img src="img/kaik_40.png" /></span><span style="padding-left: 15px;">  Kaikorai RFC e-Programme</span>
+            </div>
+        </div>
+    </nav>
+    <hr>
+    <div class="container">
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6">
+                <div id="kaikorai">
+                    <div class="row">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="row">
+                                <div class="col-xs-2">
+                                    <span class="number_pos">15</span>
+                                </div>
+                                <div class="col-xs-7">
+                                    <div class="name_pos">MITCHELL PURVIS</div>
+                                </div>
+                                <div class="col-xs-3">
+                                    <span class="photo_pos"><img src="photos/mitchell_purvis.png" height="50"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer">
+                            <a class="accordion-toggle" data-toggle="collapse" href="#collapseOne">
+                              Details
+                            </a>
+                            <div id="collapseOne" class="panel-collapse collapse in">
+                                <div class="panel-body">
+                                    Details about this person
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6">
+                <div id="opposition">
+                <!--OPPOSITION START-->
+
+                <!--OPPOSITION END-->
+                </div>
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <p>&copy; Kaikorai RFC 2018</p>
+        </footer>
+    </div>
+    <script src="js/vendor/jquery-1.11.2.min.js"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="data/data.js"></script>
+    <script>
+
+    home_team.team.forEach(function(d,i) {
+        var elm = '<div class="row">' + 
+          '<div class="panel panel-primary">' + 
+          '<div class="panel-heading">' + 
+          '<div class="row">' +
+          '<div class="col-xs-2">' +
+          '<span class="number_pos">' + d.position + '</span>' + 
+          '</div>' +
+          '<div class="col-xs-7">' +
+          '<div class="name_pos">' + d.name.toUpperCase() + '</div>' +
+          '</div>' + 
+          '<div class="col-xs-3">' +
+          '<span class="photo_pos"><img src="' + d.photo + '" height="50"></span>' +
+          '</div>' +
+          '</div>' +
+          '</div>' + 
+          '<div class="panel-footer">' +
+          '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapsehome' + i + '" aria-controls="collapsehome' + i + '">' +
+          'Details' +
+          '</a>' +
+          '<div id="collapsehome' + i + '" class="panel-collapse collapse in">' +
+          '<div class="panel-body">' +
+          'Details about this person' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>' +
+          '</div>';
+
+        $("#kaikorai").append(elm)
+        console.log(elm)
+    });
+        
+        //$('.collapse').collapse()
+
+    </script>
+</body>
+
+</html>
